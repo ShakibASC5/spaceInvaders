@@ -25,12 +25,78 @@ Extra credit:
 
 */
 
-function preload() {
+var shipX;
+var shipImage;
+var projectileY;
+var shooting;
 
+
+function preload() {
+shipImage = loadImage('images/spaceship.png');
 }
+
+
+
 
 function setup() {
+  createCanvas(500,500);
+  shipX = width / 2 -25;
+  projectileY = height -100
+  shooting = false
 }
 
+
+
 function draw() {
+  background("black")
+  fill("orange")
+  rect (shipX, projectileY, 10, 20)
+   
+ 
+  //rect(shipX, height - 100, 50, 100);
+  image(shipImage, shipX, height -100)
+  
+  if (keyIsDown(LEFT_ARROW)) {
+    shipX -= 5;
+  }
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    shipX += 5;
+  }
+  
+  console.log(keyCode);
+  if (keyIsDown(32)) {
+    projectileY -= 5;
+  
+
+
+  if(shooting == false){
+//nothing happens if shooting is true projectileY moves by -5){
+
+ }
+ 
+  if(keyIsDown(32)){
+    (shooting == true)
+  } 
+    projectileY -= 5;
+
+    
+  
+
+
 }
+
+}
+
+
+function keyPressed(){
+  projectileY -= 5
+  return true;
+}
+
+
+
+
+
+
+
